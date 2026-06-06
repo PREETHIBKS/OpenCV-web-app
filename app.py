@@ -1,3 +1,4 @@
+import os
 import cv2
 import numpy as np
 import time
@@ -206,6 +207,14 @@ def api_status():
         'registered_profiles': list(processor.registered_faces.keys())
     })
 
-if __name__ == '__main__':
-    # Bind to host 0.0.0.0 and port 5000
-    app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
+if __name__ == "__main__":
+
+    # Render provides its own PORT
+    port = int(os.environ.get("PORT", 5000))
+
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False,
+        threaded=True
+    )
