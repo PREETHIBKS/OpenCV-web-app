@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCV Projects - Real-time Workstation</title>
+    <!-- Google Fonts: Modern Inter & Sci-fi Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="glow-orb glow-1"></div>
+    <div class="glow-orb glow-2"></div>
+    <div class="glow-orb glow-3"></div>
+
+    <div class="app-container">
+        <!-- HEADER & NAVIGATION -->
+        <header class="main-header">
+            <div class="logo">
+                <span class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0z"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                </span>
+                <span class="logo-text">OPENCV <span class="accent-text">PROJECTS</span></span>
+            </div>
+            <div class="sys-time" id="digital-clock">00:00:00</div>
+        </header>
+
+        <!-- MARQUEE NOTIFICATION TICKER -->
+        <div class="ticker-bar">
+            <div class="ticker-content">
+                <span>⚡ NOTICE: This project is done by a college student. ⚡ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⚡ Real-Time Computer Vision Suite powered by OpenCV and Flask. ⚡</span>
+            </div>
+        </div>
+
+        <!-- DASHBOARD CONTAINER -->
+        <main class="content-area">
+            <!-- DASHBOARD SCREEN -->
+            <section class="screen active" id="screen-dashboard">
+                <div class="screen-header">
+                    <h1>Real-Time Computer Vision Suite</h1>
+                    <p class="subtitle">Deploy advanced OpenCV spatial analytics and core geometric intelligence models instantly.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Moving Object Detection -->
+                    <div class="project-card" data-project="moving_object">
+                        <div class="card-border-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon cyan-theme">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                            <h3>Moving Object Detection</h3>
+                            <p>Detects and outlines movement in real-time.</p>
+                            <div class="card-footer">
+                                <span class="tag">MOTION</span>
+                                <button class="btn-start btn-cyan">Initialize Feed</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Face Detection -->
+                    <div class="project-card" data-project="face_detection">
+                        <div class="card-border-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon blue-theme">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            </div>
+                            <h3>Face & Eye Detection</h3>
+                            <p>Locates and marks faces and eyes in the video feed.</p>
+                            <div class="card-footer">
+                                <span class="tag">FACE</span>
+                                <button class="btn-start btn-blue">Initialize Feed</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Object Tracking using Color -->
+                    <div class="project-card" data-project="color_tracking">
+                        <div class="card-border-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon magenta-theme">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                            </div>
+                            <h3>Object Tracking</h3>
+                            <p>Tracks a colored object and draws its movement trail.</p>
+                            <div class="card-footer">
+                                <span class="tag">COLOR</span>
+                                <button class="btn-start btn-magenta">Initialize Feed</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Face Recognition -->
+                    <div class="project-card" data-project="face_recognition">
+                        <div class="card-border-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon green-theme">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <h3>Face Recognition</h3>
+                            <p>Recognizes registered profiles and registers new users.</p>
+                            <div class="card-footer">
+                                <span class="tag">BIOMETRIC</span>
+                                <button class="btn-start btn-green">Initialize Feed</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Face Emotion Detection -->
+                    <div class="project-card" data-project="emotion_detection">
+                        <div class="card-border-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon purple-theme">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                            </div>
+                            <h3>Face Emotion Detection</h3>
+                            <p>Scans and measures facial expressions dynamically.</p>
+                            <div class="card-footer">
+                                <span class="tag">EMOTION</span>
+                                <button class="btn-start btn-purple">Initialize Feed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LIVE STREAM SCREEN (THEATER MODE) -->
+            <section class="screen" id="screen-stream">
+                <div class="stream-layout">
+                    <!-- VIDEO SCREEN CORE -->
+                    <div class="video-container">
+                        <div class="video-hud-title" id="active-project-title">PROJECT_ACTIVE</div>
+                        <button class="btn-end" id="btn-end-stream">
+                            <span class="pulse-dot"></span>
+                            END STREAM
+                        </button>
+                        
+                        <div class="video-frame-wrapper">
+                            <!-- Live webcam feed rendered directly here -->
+                            <img id="video-feed-img" src="" alt="Webcam stream loading...">
+                            
+                            <!-- Cyberpunk Tech Hud Markers -->
+                            <div class="hud-marker marker-tl"></div>
+                            <div class="hud-marker marker-tr"></div>
+                            <div class="hud-marker marker-bl"></div>
+                            <div class="hud-marker marker-br"></div>
+                        </div>
+
+                        <!-- Real-time Status Overlay -->
+                        <div class="stream-footer-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">STATUS:</span>
+                                <span class="meta-value text-green" id="stream-status-value">CONNECTED</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">FPS:</span>
+                                <span class="meta-value text-cyan" id="stream-fps-value">--.-</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">RESOLUTION:</span>
+                                <span class="meta-value">640x480</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTROL SIDEBAR & TERMINAL LOGS -->
+                    <aside class="stream-sidebar">
+                        <!-- Dynamic control parameters card -->
+                        <div class="sidebar-panel" id="panel-controls">
+                            <h3>MODULE CONTROLS</h3>
+                            
+                            <!-- Control View 1: Motion Parameter -->
+                            <div class="control-group module-setting" id="controls-moving_object" style="display: none;">
+                                <p class="control-description">Adjust background sensitivity threshold.</p>
+                                <div class="slider-wrapper">
+                                    <label>Threshold Min (Area): <span class="slider-val" id="val-motion-area">1500px</span></label>
+                                    <input type="range" min="500" max="8000" step="100" value="1500" class="tech-range" id="slider-motion-area">
+                                </div>
+                            </div>
+
+                            <!-- Control View 2: Face Parameters -->
+                            <div class="control-group module-setting" id="controls-face_detection" style="display: none;">
+                                <p class="control-description">Eye-detection filters are optimized automatically.</p>
+                                <div class="info-metric-card">
+                                    <div class="metric-row">
+                                        <span>Haar Frontal Cascade</span>
+                                        <span class="text-green">LOADED</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Haar Eye Cascade</span>
+                                        <span class="text-green">LOADED</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Control View 3: Color Tracking Filters -->
+                             <div class="control-group module-setting" id="controls-color_tracking" style="display: none;">
+                                 <p class="control-description">Select color visually to track instantly.</p>
+                                 
+                                 <div class="color-picker-wrapper">
+                                     <label class="color-picker-label">Select Color to Track:</label>
+                                     <div class="color-picker-input-container">
+                                         <input type="color" id="tech-color-picker" value="#00d2ff">
+                                         <div class="color-preview-glow" id="color-preview-circle"></div>
+                                     </div>
+                                 </div>
+                                 <div class="slider-wrapper" style="margin-top: 20px;">
+                                     <label>Color Range Spread: <span class="slider-val" id="val-color-tolerance">15</span></label>
+                                     <input type="range" min="5" max="45" step="1" value="15" class="tech-range" id="slider-color-tolerance">
+                                 </div>
+                             </div>
+
+                            <!-- Control View 4: Biometric Face Registration -->
+                            <div class="control-group module-setting" id="controls-face_recognition" style="display: none;">
+                                <p class="control-description">Add your face to the authorized biometrics database.</p>
+                                <div class="register-input-group">
+                                    <input type="text" placeholder="Enter Full Name..." class="tech-text-input" id="reg-face-name">
+                                    <button class="btn-register" id="btn-submit-registration">REGISTER PROFILE</button>
+                                </div>
+                                <div id="register-status-msg" class="status-msg"></div>
+
+                                <div class="info-metric-card" style="margin-top: 15px;">
+                                    <h4>REGISTERED ARCHIVES:</h4>
+                                    <ul id="registered-profiles-list" class="tech-list">
+                                        <li class="empty-list-item">No profiles saved yet</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Control View 5: Emotion Ratios -->
+                            <div class="control-group module-setting" id="controls-emotion_detection" style="display: none;">
+                                <p class="control-description">Real-time landmarker diagnostic meters.</p>
+                                <div class="emotion-meter-grid">
+                                    <div class="emotion-meter-row">
+                                        <span>Smile Stretch Ratio</span>
+                                        <div class="meter-bar"><div class="meter-fill" id="meter-smile" style="width: 0%"></div></div>
+                                    </div>
+                                    <div class="emotion-meter-row">
+                                        <span>Mouth Openness Ratio</span>
+                                        <div class="meter-bar"><div class="meter-fill" id="meter-open" style="width: 0%"></div></div>
+                                    </div>
+                                    <div class="emotion-meter-row">
+                                        <span>Detection Certainty</span>
+                                        <div class="meter-bar"><div class="meter-fill" id="meter-certain" style="width: 75%"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Real-Time Logger -->
+                        <div class="sidebar-panel panel-terminal">
+                            <div class="terminal-header">
+                                <div class="terminal-dots">
+                                    <span class="t-dot dot-r"></span>
+                                    <span class="t-dot dot-y"></span>
+                                    <span class="t-dot dot-g"></span>
+                                </div>
+                                <span class="terminal-title">CONSOLE MONITOR</span>
+                            </div>
+                            <div class="terminal-body" id="terminal-log-output">
+                                <div class="terminal-line"><span class="t-tag">[SYS]</span> Web GUI successfully initialized.</div>
+                                <div class="terminal-line"><span class="t-tag">[SYS]</span> Backend server listening on localhost:5000.</div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
